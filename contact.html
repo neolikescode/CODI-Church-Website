@@ -15,23 +15,254 @@
 
     <body>
         <header>
-
+            <div>
+                <h1>
+                    <img src="images/logo.jpeg" alt="City of destiny internation logo" width="30" height="30">
+                    CITY OF DESTINY INTERNATIONAL
+                </h1>
+            </div>
         </header>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="ministries.html">Ministries</a></li>
+                <li><a href="give.html">Give</a></li>
                 <li><a href="services.html">Services &amp; Events</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
         <main>
+            <form id="contact-form" method="get" action="#">
 
+                <!-- Personal Info Section -->
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div>
+                        <label for="surname">Surname:</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+
+                    <div>
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div>
+                        <label>Gender:</label>
+
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="male">Male</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Visitor Info Section -->
+                <fieldset>
+                    <legend>Visitor Information</legend>
+
+                    <div>
+                        <label>I am a:</label>
+
+                        <div>
+                            <input type="radio" id="first-visitor" name="visitor-type"
+                                   value="first-time" required>
+                            <label for="first-visitor">First Time Visitor</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="returning-visitor" name="visitor-type"
+                                   value="returning">
+                            <label for="returning-visitor">Returning Visitor</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="regular-attender" name="visitor-type"
+                                   value="regular">
+                            <label for="regular-attender">Regular Attender</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="heard-about">How did you hear about us?</label>
+
+                        <select id="heard-about" name="heard-about" required>
+                            <option value="">Please select an option</option>
+                            <option value="friend-family">Friend or Family</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="church-member">Church Member</option>
+                            <option value="church-event">Church Event</option>
+                            <option value="search-engine">Search Engine</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>Would you like us to invite you when we have any events?</label>
+
+                        <div>
+                            <input type="radio" id="invite-yes" name="event-invitation"
+                                   value="yes" required>
+                            <label for="invite-yes">Yes</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="invite-no" name="event-invitation"
+                                   value="no">
+                            <label for="invite-no">No</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>How would you like us to communicate with you?</label>
+
+                        <div>
+                            <input type="radio" id="phone-call" name="communication"
+                                   value="phone-call" required>
+                            <label for="phone-call">Phone Call</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="text-message" name="communication"
+                                   value="text-message">
+                            <label for="text-message">Text Message</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="whatsapp" name="communication"
+                                   value="whatsapp">
+                            <label for="whatsapp">WhatsApp</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="communication-email" name="communication"
+                                   value="email">
+                            <label for="communication-email">Email</label>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+                <!-- Spiritual Info Section -->
+                <fieldset>
+                    <legend>Spiritual Information</legend>
+
+                    <div>
+                        <label>Have you accepted Jesus Christ as your Lord and Saviour?</label>
+
+                        <div>
+                            <input type="radio" id="accepted-yes" name="accepted-jesus"
+                                   value="yes" required>
+                            <label for="accepted-yes">Yes</label>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="accepted-no" name="accepted-jesus"
+                                   value="no">
+                            <label for="accepted-no">No</label>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Which ministry are you interested in joining?</label>
+                        <p>Please check all that apply.</p>
+
+                        <div>
+                            <input type="checkbox" id="intercession" name="ministry"
+                                   value="intercession">
+                            <label for="intercession">Intercession</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="worship" name="ministry"
+                                   value="worship">
+                            <label for="worship">Worship</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="ushering" name="ministry"
+                                   value="ushering">
+                            <label for="ushering">Ushering</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="compassion" name="ministry"
+                                   value="hand-of-compassion">
+                            <label for="compassion">Hand of Compassion</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="childrens-ministry" name="ministry"
+                                   value="childrens-ministry">
+                            <label for="childrens-ministry">Children's Ministry</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="counselling" name="ministry"
+                                   value="counselling">
+                            <label for="counselling">Counselling</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="evangelism" name="ministry"
+                                   value="evangelism">
+                            <label for="evangelism">Evangelism</label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox" id="other-ministry" name="ministry"
+                                   value="other">
+                            <label for="other-ministry">Other</label>
+                        </div>
+
+                        <div>
+                            <label for="other-ministry-name">If other, please specify:</label>
+                            <input type="text" id="other-ministry-name"
+                                   name="other-ministry-name">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="prayer-comments">
+                            Prayer Requests or Comments (Optional):
+                        </label>
+                        <textarea id="prayer-comments"
+                                  name="prayer-comments"
+                                  rows="5"
+                                  cols="40"></textarea>
+                    </div>
+
+                </fieldset>
+                <!--Submit and Reset Form Button-->
+                <div>
+                    <input type="submit" id="submit-contact" value="Submit">
+                    <input type="reset" id="clear-contact" value="Reset">
+                </div>
+
+            </form>
         </main>
         <hr>
         <footer>
-            <p>&copy; 2026 NN. Kgatla<br><em>Last update: 18 September 2026</em></p>
+            <p>&copy; 2026 NN. Kgatla<br><em>Last update: 30 September 2026</em></p>
         </footer>
     </body>
 
