@@ -9,47 +9,166 @@
     <meta name="description" content="City of destiny international church home page">
     <meta name="author" content="NN. Kgatla">
     <title>CODI &ndash; Services &amp; Events</title>
-    <link rel="stylesheet" href="styles/modern-normalize.css">
-    <link rel="stylesheet" href="styles/codi.css">
+    <link rel="stylesheet" href="css/modern-normalize.css">
+    <link rel="stylesheet" href="css/codi.css">
 </head>
 
 <body>
     <header>
-        <div>
-            <h1>
-                <img src="images/logo.jpeg" alt="City of destiny internation logo" width="30" height="30">
-                CITY OF DESTINY INTERNATIONAL
-            </h1>
+
+        <div class="header-info">
+            <img src="images/logo.jpeg" alt="CODI Church Logo">
+            <h1>City of Destiny International</h1>
         </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="give.html">Give</a></li>
+                <li><a href="services.html">Services &amp; Events</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="give.html">Give</a></li>
-            <li><a href="services.html">Services &amp; Events</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
     <main>
+        <h1>Services &amp; Events</h1>
 
-        <section>
-            <h1>Services &amp; Events</h1>
-
+        <!-- Church Services -->
+        <section id="services">
             <h2>Our Services</h2>
 
-            <!-- The Church Service times will go here -->
+            <p>
+                All services are held at CODI Church Premises Alongside R71 Road, Phalaborwa.
+            </p>
 
+            <table>
+                <caption>Weekly Church Services</caption>
+
+                <thead>
+                    <tr>
+                        <th>Service Name</th>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Short Description</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Sunday Service</td>
+                        <td>Sunday</td>
+                        <td>09:30 &ndash; 12:30</td>
+                        <td>
+                            Worship, the Word, and fellowship as we encounter our
+                            destiny and grow together in Christ.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Daughters of Sarah</td>
+                        <td>Thursday</td>
+                        <td>17:00 &ndash; 18:00</td>
+                        <td>
+                            Women gathering in prayer for their families, children,
+                            and communities.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Mid-week Service</td>
+                        <td>Wednesday</td>
+                        <td>17:30 &ndash; 18:30</td>
+                        <td>
+                            A time of worship, prayer, and teaching to strengthen
+                            our faith throughout the week.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Youth &ndash; Light Bearers</td>
+                        <td>Friday</td>
+                        <td>17:30 &ndash; 18:30</td>
+                        <td>
+                            Youth fellowship, spiritual growth, and rehearsals as
+                            young people develop their gifts.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Prayer and Fasting</td>
+                        <td>Tuesday</td>
+                        <td>17:30 &ndash; 18:30</td>
+                        <td>
+                            A time of prayer and fasting as we seek God&rsquo;s
+                            presence, guidance, and intervention.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
-        <section>
-
+        <!-- Upcoming Events -->
+        <section id="upcoming-events">
             <h2>Upcoming Events</h2>
 
-            <!-- The upcominng Events will go here -->
+            <p>
+                Discover what is happening at CODI Church.
+            </p>
 
+            <div class="event-container">
+
+                <article class="event-card">
+                    <img src="images/events/fasting-prayer.jpg"
+                         alt="Fasting and Prayer">
+
+                    <div class="event-info">
+                        <p class="event-date">02 OCTOBER 2026</p>
+
+                        <h3>Fasting &amp; Prayer</h3>
+
+                        <p>
+                            Join us for a dedicated time of fasting and prayer
+                            as we seek the presence of God together.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <img src="images/events/education-sunday.jpg"
+                         alt="Education Sunday">
+
+                    <div class="event-info">
+                        <p class="event-date">25 OCTOBER 2026</p>
+
+                        <h3>Education Sunday</h3>
+
+                        <p>
+                            Honoring educators and promoting the value of
+                            education in our communities.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <img src="images/events/gala-dinner.jpg"
+                         alt="Gala Dinner">
+
+                    <div class="event-info">
+                        <p class="event-date">28 NOVEMBER 2026</p>
+
+                        <h3>Gala Dinner</h3>
+
+                        <p>
+                            An evening of elegance, fellowship, and gratitude
+                            as we celebrate together.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
         </section>
-
     </main>
     <hr>
     <footer>
