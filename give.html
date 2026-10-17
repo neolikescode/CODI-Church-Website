@@ -10,8 +10,9 @@
     <meta name="description" content="Give to City of Destiny International: banking details, clothing and material donations, and ministries you can join.">
     <meta name="author" content="NN. Kgatla">
     <title>CODI &ndash; Give</title>
-    <link rel="stylesheet" href="css/modern-normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Bootstrap stylesheet integration -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/codi.css">
 </head>
 
 <body>
@@ -43,11 +44,8 @@
                 <p>How would you like to give?</p>
 
                 <div id="give-options">
-
-                    <a href="#donate">Donate</a>
-
-                    <a href="#join-ministry">Join a Ministry</a>
-
+                    <a href="#donate" class="give-button">Donate</a>
+                    <a href="#join-ministry" class="give-button">Join a Ministry</a>
                 </div>
 
             </section>
@@ -257,6 +255,8 @@
         </footer>
 
     </div>
+    <!-- Bootstrap file integration -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
