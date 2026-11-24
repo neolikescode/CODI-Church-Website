@@ -7,23 +7,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="City of Destiny International (CODI) church in Phalaborwa: Sunday service time, how to give and how to find us.">
+    <meta name="description" content="City of Destiny International (CODI) 
+        church in Phalaborwa:Sunday service time, how to give and how to find us.">
     <meta name="author" content="NN. Kgatla">
     <title>CODI &ndash; Home</title>
     <!-- Bootstrap stylesheet integration -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/modern-normalize.css">
     <link rel="stylesheet" href="css/codi.css">
-
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 
 <body>
-    <div id="container">
+    <div id="container" class="container">
 
-        <header>
+        <header class="container">
 
             <div class="header-info">
-                <a href="index.html"><img src="images/logo.jpeg" alt="CODI Church logo (home page)" width="80" height="50"></a>
-                <h1>City of Destiny International</h1>
+                <a href="index.html"><img src="images/logo.jpeg" class="rounded-circle"
+                        alt="CODI Church logo (home page)"></a>
+                <h1 class="text-capitalize ">City of Destiny International</h1>
             </div>
 
             <nav>
@@ -39,14 +41,12 @@
         </header>
 
         <main>
-
             <!-- Hero: the photo is a decorative CSS background -->
-            <section id="hero">
-                <h2 id="hero-tagline">Discover. Recover. Fulfil your destiny.</h2>
+            <section id="hero" class="row mt-5 mx-auto">
+                <h2 id="hero-tagline" class="col-12 fw-bold text-capitalize">Fulfil your destiny.</h2>
             </section>
-
-            <section id="next-service">
-                <h2>Join us this Sunday</h2>
+            <section id="next-service" class="row mt-5 mx-auto">
+                <h2 class="fw-bold text-capitalize">Join us this Sunday</h2>
 
                 <p><strong>Sunday service:</strong> 09:30 &ndash; 12:30</p>
 
@@ -60,38 +60,33 @@
                     or <a href="contact.html">find us and get in touch</a>.
                 </p>
             </section>
+            <section id="quick-links" class="row mt-5 mx-auto">
 
-            <section id="quick-links">
-
-                <article class="link-card">
-                    <h2><a href="services.html">Services &amp; events</a></h2>
+                <article class="link-card col-6 me-2">
+                    <h2 class="fw-bold text-capitalize"><a href="services.html">Services &amp; events</a></h2>
                     <p>Weekly services and upcoming events.</p>
                 </article>
 
-                <article class="link-card">
-                    <h2><a href="about.html">About Us</a></h2>
+                <article class="link-card col">
+                    <h2 class="fw-bold text-capitalize"><a href="about.html">About Us</a></h2>
                     <p>Find out more about CODI.</p>
                 </article>
 
-                <article class="link-card">
-                    <h2><a href="give.html">Give</a></h2>
+                <article class="link-card col-6 me-2">
+                    <h2 class="fw-bold text-capitalize"><a href="give.html">Give</a></h2>
                     <p>Support the church by giving, or by serving in a ministry.</p>
                 </article>
 
-                <article class="link-card">
-                    <h2><a href="contact.html">Contact us</a></h2>
+                <article class="link-card col">
+                    <h2 class="fw-bold text-capitalize"><a href="contact.html">Contact us</a></h2>
                     <p>Find our address and send us a message.</p>
                 </article>
-
             </section>
-
         </main>
-
         <footer>
             <p>&copy; 2026 NN. Kgatla<br><em>Last update: 9 October 2026</em></p>
             <p><a href="../myindex.html">Back to my personal index page</a></p>
         </footer>
-
     </div>
     <!-- Bootstrap file integration -->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
