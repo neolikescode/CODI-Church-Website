@@ -1,405 +1,371 @@
 /*
-    NN. Kgatla (2029139488)
-    CSIS1664 (2026) Website Project
-    File name: styles.css
+    City of Destiny International (CODI) website
+    File name: codi.css
+    Loaded AFTER Bootstrap 5 (bootstrap/css/bootstrap.min.css)
 */
 
 /* =========================================
-   CHURCH COLOUR THEME
-
-   Charcoal:  #332F2B  header, footer, dark panels, text on light panels
-   Gold:      #C89B3C  headings on dark, borders, accents
-   Dark gold: #7A5A14  links on light panels (gold is too pale on cream)
-   Cream:     #F8F5EF  light panels
-   White:     #FFFFFF  text on dark panels, form controls
+   DESIGN TOKENS (taken from the CODI logo)
    ========================================= */
+
+:root {
+    --codi-blue: #1365C8;
+    /* "CODI" lettering */
+    --codi-blue-dark: #0E4F9F;
+    --codi-navy: #2F4567;
+    /* logo outline: body text */
+    --codi-ink: #1B3358;
+    /* headings */
+    --codi-muted: #5B6B83;
+    --codi-sky: #F2F7FD;
+    /* pale blue wash */
+    --codi-sky-2: #E7F0FC;
+    --codi-cream: #FBF3E6;
+    /* light parchment */
+    --codi-parchment: #F3DCBC;
+    /* Bible pages */
+    --codi-taupe: #B5A897;
+    /* cross */
+    --codi-line: #E3EAF4;
+    --codi-radius: 20px;
+    --codi-radius-lg: 28px;
+    --codi-shadow: 0 6px 20px rgba(19, 101, 200, 0.10);
+    --codi-shadow-lg: 0 18px 40px rgba(19, 101, 200, 0.18);
+
+    /* Make Bootstrap's own colours follow the logo */
+    --bs-primary: #1365C8;
+    --bs-primary-rgb: 19, 101, 200;
+    --bs-body-color: #2F4567;
+    --bs-link-color: #1365C8;
+    --bs-link-hover-color: #0E4F9F;
+}
 
 
 /* =========================================
-   GENERAL WEBSITE STYLING
+   BASE
    ========================================= */
 
-/* Photo background with a charcoal layer over it (first layer is in front) */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    /* sticky navbar */
+}
+
 body {
-    background-color: #332F2B;
-    background-image: linear-gradient(rgba(51, 47, 43, 0.82), rgba(51, 47, 43, 0.82)), url("../images/backgroundimage1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-    line-height: 1.6;
+    background-color: #FFFFFF;
+    color: var(--codi-navy);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.65;
 }
 
-#container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Padding and borders are counted inside the width, so side-by-side
-   boxes (percentage widths) really do fit next to each other.
-   modern-normalize should do this already; this makes it certain. */
-#mission,
-#vision,
-.link-card,
-.event-card,
-.give-group,
-#join-ministry article,
-#find-us img,
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form input[type="tel"],
-#contact-form select,
-#contact-form textarea {
-    box-sizing: border-box;
-}
-
-/* Headings */
 h1,
 h2,
 h3,
-h4 {
-    color: #C89B3C;
+h4,
+h5 {
+    color: var(--codi-ink);
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.15;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+    font-size: 1.25rem;
 }
 
 h4 {
-    font-size: 1.1em;
+    font-size: 1.05rem;
 }
 
-/* Links */
 a {
-    color: #C89B3C;
+    color: var(--codi-blue);
 }
 
 a:hover {
+    color: var(--codi-blue-dark);
+}
+
+.lead {
+    color: var(--codi-muted);
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-alt {
+    background-color: var(--codi-sky);
+}
+
+/* Small label above a heading */
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50rem;
+    background-color: var(--codi-sky-2);
+    color: var(--codi-blue);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+
+.codi-navbar {
+    padding: 0.6rem 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--codi-line);
+}
+
+.codi-navbar .navbar-brand {
+    white-space: normal;
+    color: var(--codi-ink);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.brand-logo {
+    width: auto;
+    height: 44px;
+}
+
+.brand-name {
+    display: inline-block;
+    max-width: 12rem;
+    font-size: 0.95rem;
+}
+
+.codi-navbar .navbar-nav .nav-link {
+    margin: 0.15rem 0.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50rem;
+    color: var(--codi-navy);
+    font-weight: 600;
+}
+
+.codi-navbar .navbar-nav .nav-link:hover {
+    background-color: var(--codi-sky-2);
+    color: var(--codi-blue);
+}
+
+.codi-navbar .navbar-nav .nav-link.active {
+    background-color: var(--codi-blue);
+    color: #FFFFFF;
+}
+
+/* Hamburger button. Bootstrap 5.0/5.1 only draw the border and the three
+   lines inside .navbar-light, so they are set here for every version. */
+.codi-navbar .navbar-toggler {
+    padding: 0.4rem 0.65rem;
+    border: 1px solid #CBD7E8;
+    border-radius: 12px;
+}
+
+.codi-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(19, 101, 200, 0.15);
+}
+
+.codi-navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%232F4567' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn-codi,
+.btn-codi-outline {
+    padding: 0.65rem 1.5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50rem;
+    font-weight: 600;
+}
+
+.btn-codi {
+    background-color: var(--codi-blue);
+    border-color: var(--codi-blue);
+    box-shadow: 0 6px 16px rgba(19, 101, 200, 0.25);
+    color: #FFFFFF;
+}
+
+.btn-codi:hover,
+.btn-codi:focus {
+    background-color: var(--codi-blue-dark);
+    border-color: var(--codi-blue-dark);
+    color: #FFFFFF;
+}
+
+.btn-codi-outline {
+    background-color: #FFFFFF;
+    border-color: var(--codi-blue);
+    color: var(--codi-blue);
+}
+
+.btn-codi-outline:hover,
+.btn-codi-outline:focus {
+    background-color: var(--codi-blue);
+    border-color: var(--codi-blue);
     color: #FFFFFF;
 }
 
 
 /* =========================================
-   HEADER AND NAVIGATION
+   CARDS
    ========================================= */
 
-header {
-    overflow: hidden; 
-    padding: 8px 15px;
-    background-color: #332F2B;
-    background-image: linear-gradient(to bottom, #4A443E, #332F2B);
-    border-bottom: 3px solid #C89B3C;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
+.card-soft {
+    height: 100%;
+    padding: 1.75rem;
+    border: 1px solid var(--codi-line);
+    border-radius: var(--codi-radius);
+    background-color: #FFFFFF;
+    box-shadow: var(--codi-shadow);
 }
 
-/* Church logo and name (floated left) */
-.header-info {
-    float: left;
+.card-cream {
+    background-color: var(--codi-cream);
+    border-color: var(--codi-parchment);
 }
 
-.header-info img {
-    float: left;
-    width: 44px;
-    height: auto;
-    margin-right: 12px;
-    border: 1px solid #C89B3C;
-    border-radius: 8px;
+.card-sky {
+    background-color: var(--codi-sky);
+    border-color: var(--codi-sky-2);
 }
 
-header h1 {
-    margin: 0;
-    color: #FFFFFF;
-    font-size: 1.2em;
-    letter-spacing: 1px;
-    line-height: 2.3em;
+/* Whole card is a link (Bootstrap stretched-link) */
+.card-link {
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Navigation (floated right) */
-nav {
-    float: right;
+.card-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--codi-shadow-lg);
 }
 
-nav ul {
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-nav li {
-    float: left;
-}
-
-nav a {
-    display: block;
-    margin: 4px 3px;
-    padding: 9px 13px;
-    border-bottom: 2px solid #332F2B;
-    border-radius: 5px;
-    color: #FFFFFF;
-    font-size: 0.9em;
-    font-weight: bold;
-    line-height: 1.25em;
+.card-link h3 a {
+    color: var(--codi-ink);
     text-decoration: none;
 }
 
-/* Hover and current page look the same */
-nav a:hover,
-nav a.current {
-    background-color: #C89B3C;
-    border-bottom-color: #C89B3C;
-    color: #332F2B;
+.card-link .arrow {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: var(--codi-blue);
+    font-weight: 700;
+}
+
+.info-label {
+    margin-bottom: 0.25rem;
+    color: var(--codi-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.info-value {
+    margin-bottom: 0.25rem;
+    color: var(--codi-ink);
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 
 /* =========================================
-   FOOTER
+   HERO (home) AND PAGE HEADERS
    ========================================= */
 
-footer {
-    margin-bottom: 25px;
-    padding: 15px 20px;
-    background-color: #332F2B;
-    border-top: 4px solid #C89B3C;
-    border-radius: 0px 0px 8px 8px;
-    color: #FFFFFF;
-    text-align: center;
+.hero {
+    padding: 4rem 0 4.5rem;
+    background-image: radial-gradient(circle at 90% 0%, var(--codi-sky-2) 0%, rgba(231, 240, 252, 0) 55%),
+        linear-gradient(180deg, var(--codi-sky) 0%, #FFFFFF 100%);
 }
 
-footer p {
-    margin: 0;
-}
-
-
-/* =========================================
-   SHARED PAGE LAYOUT (all inner pages)
-   ========================================= */
-
-main {
-    padding: 0 20px;
-}
-
-/* Page heading banner */
-main h1 {
-    margin: 25px 0 0 0;
-    padding: 10px 20px;
-    border-bottom: 4px solid #C89B3C;
-    border-radius: 8px 8px 0px 0px;
-    background-color: #332F2B;
-    color: #C89B3C;
-    text-align: center;
-}
-
-/* Page heading inside a panel */
-section h1 {
-    margin: 0 0 25px 0;
-}
-
-/* Dark panels: charcoal with white text */
-#next-service,
-#senior-pastor,
-#give-intro,
-#thank-you,
-#upcoming-events,
-#get-in-touch {
-    margin: 25px 0;
-    padding: 25px;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
-    background-color: #332F2B;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
-    color: #FFFFFF;
-}
-
-/* Light panels: cream with charcoal text (easier to read) */
-#mission,
-#vision,
-#mandate,
-#services,
-#donate,
-#join-ministry,
-#find-us,
-#form {
-    margin: 25px 0;
-    padding: 25px;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
-    background-color: #F8F5EF;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
-    color: #332F2B;
-}
-
-#mission h2,
-#vision h2,
-#mandate h2,
-#services h2,
-#donate h2,
-#join-ministry h2,
-#find-us h2,
-#form h2,
-#mission h3,
-#vision h3,
-#mandate h3,
-#services h3,
-#donate h3,
-#join-ministry h3,
-#find-us h3,
-#form h3,
-#mission h4,
-#vision h4,
-#mandate h4,
-#services h4,
-#donate h4,
-#join-ministry h4,
-#find-us h4,
-#form h4 {
-    color: #332F2B;
-}
-
-#mission a,
-#vision a,
-#mandate a,
-#services a,
-#donate a,
-#join-ministry a,
-#find-us a,
-#form a {
-    color: #7A5A14;
-}
-
-#mission a:hover,
-#vision a:hover,
-#mandate a:hover,
-#services a:hover,
-#donate a:hover,
-#join-ministry a:hover,
-#find-us a:hover,
-#form a:hover {
-    color: #332F2B;
-}
-
-/* Gold line under section headings */
-#mission h2,
-#vision h2,
-#mandate h2,
-#services h2,
-#donate h2,
-#join-ministry h2,
-#find-us h2,
-#next-service h2,
-#upcoming-events h2,
-#get-in-touch h2 {
-    margin-top: 0;
-    padding-bottom: 6px;
-    border-bottom: 2px solid #C89B3C;
-}
-
-
-/* =========================================
-   HOME PAGE
-   ========================================= */
-
-/* Hero: photo with a gradient over it so the text stays legible */
-#hero {
+.hero-photo {
     position: relative;
-    height: 22em;
-    margin: 25px 0;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
-    background-color: #332F2B;
-    background-image: linear-gradient(to bottom, rgba(51, 47, 43, 0) 30%, rgba(51, 47, 43, 1) 100%), url("../images/backgroundimage2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
 }
 
-/* Tagline placed over the bottom of the photo (absolute) */
-#hero-tagline {
+/* Parchment block behind the photo */
+.hero-photo::before {
+    content: "";
     position: absolute;
-    bottom: 25px;
-    left: 30px;
-    margin: 0;
-    color: #FFFFFF;
-    font-size: 2.4em;
-    text-shadow: 2px 2px 6px #000000;
+    top: 18px;
+    right: -10px;
+    bottom: -14px;
+    left: 18px;
+    border-radius: var(--codi-radius-lg);
+    background-color: var(--codi-parchment);
 }
 
-/* Four equal quick-link cards */
-
-#quick-links {
-    overflow: hidden;
-}
-
-.link-card {
-    float: left;
+.hero-photo img {
+    position: relative;
     width: 100%;
-    height: 12em;
-    margin: 0 0 25px 0;
-    padding: 20px;
-    border: 2px solid #C89B3C;
-    border-top: 5px solid #C89B3C;
-    border-radius: 8px;
-    background-color: #F8F5EF;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
-    color: #332F2B;
-    text-align: center;
-    box-sizing: border-box;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--codi-radius-lg);
+    box-shadow: var(--codi-shadow-lg);
+    object-fit: cover;
 }
 
-/* Start the third card on a new row */
-
-.link-card:nth-child(3) {
-    clear: left;
+.hero-chip {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    padding: 0.7rem 1rem;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: var(--codi-shadow-lg);
+    line-height: 1.3;
 }
 
-/* Card headings */
-
-.link-card h2 {
-    margin-top: 0;
-    font-size: 1.3em;
+.hero-chip small {
+    display: block;
+    color: var(--codi-muted);
+    font-weight: 600;
 }
 
-/* Keep the links as links, not buttons */
-
-.link-card a {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    box-shadow: none;
-    color: #7A5A14;
-    font-weight: bold;
-    text-decoration: underline;
+.hero-chip strong {
+    color: var(--codi-ink);
 }
 
-.link-card a:hover {
-    color: #332F2B;
+.page-hero {
+    padding: 3.5rem 0 2.5rem;
+    background-image: linear-gradient(180deg, var(--codi-sky) 0%, #FFFFFF 100%);
 }
+
 
 /* =========================================
-   ABOUT US PAGE
+   ABOUT PAGE
    ========================================= */
 
-/* Senior pastor: names either side of the photo */
-#senior-pastor {
+.pastor-card {
+    padding: 2rem;
+    border: 1px solid var(--codi-line);
+    border-radius: var(--codi-radius-lg);
+    background-image: linear-gradient(135deg, var(--codi-sky) 0%, #FFFFFF 70%);
+    box-shadow: var(--codi-shadow);
     text-align: center;
 }
 
-/* Reference point for the absolutely positioned items */
+/* Reference point for the absolutely positioned names and title */
 #pastor-photo {
     position: relative;
 }
@@ -407,20 +373,23 @@ section h1 {
 #pastor-photo img {
     display: block;
     width: 300px;
+    max-width: 100%;
     height: auto;
     margin: 0 auto;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.5);
+    border: 4px solid #FFFFFF;
+    border-radius: var(--codi-radius);
+    box-shadow: var(--codi-shadow-lg);
 }
 
 #pastor-photo h2 {
     margin: 0;
-    color: #C89B3C;
-    font-size: 3.5em;
+    color: var(--codi-ink);
+    font-size: 3.5rem;
+    font-weight: 800;
     line-height: 1.1;
 }
 
+/* First name on the left of the photo */
 #pastor-first-name {
     position: absolute;
     top: 30%;
@@ -429,6 +398,7 @@ section h1 {
     text-align: right;
 }
 
+/* Surname on the right of the photo */
 #pastor-last-name {
     position: absolute;
     top: 30%;
@@ -437,18 +407,19 @@ section h1 {
     text-align: left;
 }
 
+/* Title at the bottom right of the photo */
 #pastor-title {
     position: absolute;
     bottom: 0;
     left: 50%;
     margin: 0 0 0 165px;
-    color: #FFFFFF;
+    color: var(--codi-navy);
     text-align: left;
     line-height: 1.3;
 }
 
 #pastor-title strong {
-    color: #C89B3C;
+    color: var(--codi-blue);
     font-size: 1.3em;
 }
 
@@ -457,459 +428,347 @@ section h1 {
     margin: 25px auto 0 auto;
 }
 
-/* Mission and vision side by side (float) */
-#mission,
-#vision {
-    float: left;
-    width: 47%;
-    min-height: 14em;
-    margin: 0 1.5% 25px 1.5%;
+/* Below the large breakpoint there is no room beside the photo,
+   so name, photo, title and bio stack in the centre */
+@media (max-width: 991.98px) {
+
+    #pastor-photo h2 {
+        margin-bottom: 1.25rem;
+        font-size: clamp(2rem, 7vw, 2.75rem);
+    }
+
+    #pastor-first-name,
+    #pastor-last-name,
+    #pastor-title {
+        position: static;
+        width: auto;
+        text-align: center;
+    }
+
+    #pastor-title {
+        margin: 1rem 0 0 0;
+    }
 }
 
-/* Divine mandate */
-#mandate {
-    clear: both;
-    margin: 0 0 25px 0;
+.quote-card {
+    margin: 1.5rem 0;
+    padding: 1.5rem 1.75rem;
+    border-left: 5px solid var(--codi-taupe);
+    border-radius: 0 var(--codi-radius) var(--codi-radius) 0;
+    background-color: var(--codi-cream);
 }
 
-#mandate blockquote {
-    margin: 20px 0;
-    padding: 12px 20px;
-    border-left: 4px solid #C89B3C;
-    border-radius: 4px;
-    background-color: #FFFFFF;
+.quote-card blockquote {
+    margin: 0 0 0.5rem 0;
+    color: var(--codi-ink);
+    font-size: 1.25rem;
     font-style: italic;
 }
 
-#mandate li {
-    margin-bottom: 8px;
+.quote-card figcaption {
+    color: var(--codi-muted);
+    font-weight: 600;
+}
+
+.mandate-list {
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mandate-list li {
+    position: relative;
+    margin-bottom: 0.75rem;
+    padding-left: 1.75rem;
+}
+
+.mandate-list li::before {
+    content: "";
+    position: absolute;
+    top: 0.6em;
+    left: 0;
+    width: 0.65rem;
+    height: 0.65rem;
+    border-radius: 50%;
+    background-color: var(--codi-blue);
 }
 
 
 /* =========================================
-   SERVICES AND EVENTS PAGE
+   SERVICES PAGE
    ========================================= */
 
-/* Weekly services table */
-#services table {
-    width: 100%;
-    margin-top: 15px;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-#services caption {
-    padding: 10px;
-    color: #332F2B;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-#services th,
-#services td {
-    padding: .75em;
-    border: 1px solid #C89B3C;
-    text-align: left;
-    vertical-align: top;
-}
-
-#services th {
-    border-bottom: 4px solid #C89B3C;
-    background-color: #332F2B;
-    color: #C89B3C;
-}
-
-#services th:nth-child(1) {
-    width: 22%;
-}
-
-#services th:nth-child(2) {
-    width: 14%;
-}
-
-#services th:nth-child(3) {
-    width: 17%;
-}
-
-#services tbody tr:nth-child(even) {
-    background-color: #FFFFFF;
-}
-
-.event-container {
+.table-card {
     overflow: hidden;
+    border: 1px solid var(--codi-line);
+    border-radius: var(--codi-radius);
+    box-shadow: var(--codi-shadow);
+}
+
+.codi-table {
+    margin-bottom: 0;
+    color: var(--codi-navy);
+}
+
+.codi-table thead th {
+    padding: 1rem;
+    border: 0;
+    background-color: var(--codi-blue);
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.codi-table td {
+    padding: 1rem;
+    border-color: var(--codi-line);
+}
+
+.codi-table tbody tr:nth-child(even) {
+    background-color: var(--codi-sky);
 }
 
 .event-card {
-    float: left;
-    width: 46%;
-    height: 42em;
-    margin: 0 2% 25px 2%;
     overflow: hidden;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
-    background-color: #F8F5EF;
-    color: #332F2B;
-    box-sizing: border-box;
+    padding: 0;
 }
 
-/* Event information: consistent space above each poster */
-
-.event-info {
-    height: 15em;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.event-info h3 {
-    margin-top: 0;
-    color: #332F2B;
-}
-
-/* Posters: preserve their original proportions */
 .event-card img {
-    display: block;
     width: 100%;
     height: auto;
 }
 
-/* Education Sunday poster */
-
-#education-event img {
-    width: 99.9%;
-    height: 69%;
-    margin: 0 auto;
+.event-body {
+    padding: 1.75rem;
 }
 
-.event-date {
-    margin: 0 0 12px 0;
-    padding-left: 8px;
-    border-left: 4px solid #C89B3C;
-    font-weight: bold;
+.date-chip {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50rem;
+    background-color: var(--codi-sky-2);
+    color: var(--codi-blue);
+    font-size: 0.9rem;
+    font-weight: 700;
 }
+
+.date-chip-past {
+    background-color: #EFEAE3;
+    color: var(--codi-muted);
+}
+
 
 /* =========================================
    GIVE PAGE
    ========================================= */
 
-#give-intro {
+/* Donate / Join a ministry buttons */
+.give-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 40rem;
+    height: auto;
     text-align: center;
-    margin: 25px 0;
+}
+.bank-card {
+    height: 100%;
+    padding: 2rem;
+    border-radius: var(--codi-radius-lg);
+    background-image: linear-gradient(135deg, var(--codi-blue) 0%, var(--codi-navy) 100%);
+    box-shadow: var(--codi-shadow-lg);
+    color: #FFFFFF;
 }
 
-#give-intro p {
-    text-align: center;
+.bank-card h3,
+.bank-card h4 {
+    color: #FFFFFF;
 }
 
-#give-options .give-button {
-    display: inline-block;
-    margin: 0 10px 10px 10px;
-    padding: 15px 30px;
-    border: 2px solid #C89B3C;
-    border-radius: 5px;
-    background-color: #C89B3C;
-    color: #332F2B;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-decoration: none;
+.bank-card p {
+    color: rgba(255, 255, 255, 0.85);
 }
 
-#give-options .give-button:hover {
-    background-color: #332F2B;
-    color: #C89B3C;
+.bank-details {
+    margin: 1.5rem 0 0 0;
 }
 
-#give-options .give-button:hover {
-    background-color: #332F2B;
-    color: #C89B3C;
+.bank-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-/* The two big buttons */
-.give-button {
-    display: inline-block;
-    padding: .75em 2em;
-    border: 2px solid #C89B3C;
-    border-radius: 5px;
-    background-color: #C89B3C;
-    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
-    color: #332F2B;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-decoration: none;
+.bank-row dt {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.give-button:hover {
-    background-color: #332F2B;
-    color: #C89B3C;
+.bank-row dd {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: right;
 }
 
-/* Nested list under each button (keeps its bullets) */
-.give-group ul {
-    display: inline-block;
-    margin: 15px 0 0 0;
-    list-style-type: disc;
-    text-align: left;
-}
-
-/* Donation sub-sections */
-#financial-giving,
-#material-donations,
-#treasurer-contact {
-    margin: 20px 0;
-    padding: 5px 0 5px 20px;
-    border-left: 4px solid #C89B3C;
-}
-
-#financial-giving h3,
-#material-donations h3,
-#treasurer-contact h3 {
-    margin-top: 0;
-}
-
-/* Ministry cards: two per row (float) */
-#join-ministry {
-    overflow: hidden;
-}
-
-#join-ministry article {
-    float: left;
-    width: 47%;
-    margin: 0 1.5% 20px 1.5%;
-    padding: 20px;
-    border: 1px solid #C89B3C;
-    border-radius: 8px;
-    background-color: #FFFFFF;
-}
-
-/* Cards 3 and 5 start a new row (articles come after the heading and intro) */
-#join-ministry article:nth-child(3),
-#join-ministry article:nth-child(5) {
-    clear: left;
-}
-
-#join-ministry article h3 {
-    margin-top: 0;
+.person {
+    margin-bottom: 0.25rem;
+    color: var(--codi-ink);
+    font-weight: 700;
 }
 
 
 /* =========================================
-   CONTACT US PAGE
+   CONTACT PAGE
    ========================================= */
 
-/* Find us */
-#find-us {
-    text-align: center;
+.form-section {
+    margin: 0 0 1.25rem 0;
+    padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+    border: 1px solid var(--codi-line);
+    border-radius: 16px;
+    background-color: #FFFFFF;
 }
 
-#find-us address {
-    font-style: normal;
-}
-
-/* Church photos: same height, centred side by side */
-#find-us figure {
-    display: inline-block;
-    margin: 0 2% 15px 2%;
-    vertical-align: top;
-}
-
-#find-us img {
+.form-section legend {
+    float: none;
     width: auto;
-    height: 18em;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    padding: 0 0.5rem;
+    color: var(--codi-blue);
+    font-size: 1rem;
+    font-weight: 700;
 }
 
-#find-us figcaption {
-    margin-top: 8px;
-    font-weight: bold;
+.form-label {
+    color: var(--codi-ink);
+    font-weight: 600;
 }
 
-/* Contact form */
-#contact-form fieldset {
-    margin: 0 0 25px 0;
-    padding: 20px;
-    border: 2px solid #C89B3C;
-    border-radius: 8px;
+.form-control,
+.form-select {
+    padding: 0.65rem 0.9rem;
+    border: 1px solid #CBD7E8;
+    border-radius: 12px;
 }
 
-#contact-form legend {
-    padding: 0 10px;
-    color: #332F2B;
-    font-size: 1.1em;
-    font-weight: bold;
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--codi-blue);
+    box-shadow: 0 0 0 0.25rem rgba(19, 101, 200, 0.15);
 }
 
-#contact-form div {
-    margin-bottom: 12px;
+.form-check-input:checked {
+    background-color: var(--codi-blue);
+    border-color: var(--codi-blue);
 }
 
-#contact-form label {
-    display: block;
-    margin-bottom: 4px;
-    font-weight: bold;
+.form-check-input:focus {
+    border-color: var(--codi-blue);
+    box-shadow: 0 0 0 0.25rem rgba(19, 101, 200, 0.15);
 }
 
-/* Titles for groups of radio buttons / check boxes */
-#contact-form .group-title {
-    margin: 0 0 6px 0;
-    font-weight: bold;
+/* Send / Clear buttons */
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
-/* Text controls */
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form input[type="tel"],
-#contact-form select,
-#contact-form textarea {
-    display: block;
+.photo-tile {
     width: 100%;
-    max-width: 35em;
-    padding: .5em;
-    border: 1px solid #332F2B;
-    border-radius: 5px;
-    background-color: #FFFFFF;
-    color: #332F2B;
-    font-family: inherit;
-    font-size: inherit;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    box-shadow: var(--codi-shadow);
+    object-fit: cover;
 }
 
-#contact-form textarea {
-    height: 6em;
-}
-
-/* Radio buttons and check boxes: label next to the control */
-#contact-form input[type="radio"],
-#contact-form input[type="checkbox"] {
-    margin-right: 6px;
-}
-
-#contact-form input[type="radio"]+label,
-#contact-form input[type="checkbox"]+label {
-    display: inline;
-    margin-bottom: 0;
-    font-weight: normal;
-}
-
-/* Keyboard focus */
-#contact-form input:focus,
-#contact-form select:focus,
-#contact-form textarea:focus {
-    outline: 3px solid #332F2B;
-    outline-offset: 2px;
-}
-
-/* Submit and reset buttons */
-#form-buttons {
-    margin-top: 20px;
+.photo-caption {
+    margin-top: 0.4rem;
+    color: var(--codi-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
     text-align: center;
-}
-
-#contact-form input[type="submit"],
-#contact-form input[type="reset"] {
-    margin: 5px;
-    padding: .6em 1.5em;
-    border: 2px solid #332F2B;
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: bold;
-}
-
-#contact-form input[type="submit"] {
-    background-color: #332F2B;
-    color: #C89B3C;
-}
-
-#contact-form input[type="reset"] {
-    background-color: #FFFFFF;
-    color: #332F2B;
-}
-
-#contact-form input[type="submit"]:hover,
-#contact-form input[type="reset"]:hover {
-    background-color: #C89B3C;
-    color: #332F2B;
-}
-
-/* Get in touch */
-#get-in-touch strong {
-    color: #C89B3C;
 }
 
 
 /* =========================================
-   PRINT STYLES
+   THANK-YOU PAGE
    ========================================= */
 
-@media print {
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.25rem auto;
+    border-radius: 50%;
+    background-color: var(--codi-sky-2);
+    color: var(--codi-blue);
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-    body {
-        background-color: #FFFFFF;
-        background-image: none;
-        color: #000000;
-        font-family: "Times New Roman", Times, serif;
-        font-size: 12pt;
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.codi-footer {
+    padding: 3rem 0 1.5rem;
+    border-top: 1px solid var(--codi-line);
+    background-color: var(--codi-sky);
+}
+
+.footer-logo {
+    width: auto;
+    height: 40px;
+}
+
+.footer-note {
+    margin: 2rem 0 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--codi-line);
+    color: var(--codi-muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+
+/* =========================================
+   SMALL SCREENS
+   ========================================= */
+
+@media (max-width: 575.98px) {
+
+    .section {
+        padding: 3rem 0;
     }
 
-    /* Not needed on paper */
-    nav,
-    #give-options,
-    #form-buttons {
-        display: none;
+    .hero {
+        padding: 2.5rem 0 3rem;
     }
 
-    /* Backgrounds are not printed, so use dark text everywhere */
-    header,
-    footer,
-    main h1,
-    #next-service,
-    #senior-pastor,
-    #give-intro,
-    #thank-you,
-    #upcoming-events,
-    #get-in-touch,
-    #pastor-title,
-    #pastor-title strong,
-    #hero-tagline,
-    #pastor-first-name,
-    #pastor-last-name,
-    #services th {
-        background-color: #FFFFFF;
-        background-image: none;
-        color: #000000;
-        text-shadow: none;
+    .pastor-card {
+        padding: 1.25rem;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    a {
-        color: #000000;
-        break-after: avoid;
+    .card-soft,
+    .bank-card {
+        padding: 1.25rem;
     }
 
-    h1 {
-        font-size: 20pt;
+    .bank-row {
+        flex-direction: column;
+        gap: 0.1rem;
     }
 
-    h2 {
-        font-size: 16pt;
-    }
-
-    header h1 {
-        font-size: 20pt;
-    }
-
-    p {
-        orphans: 3;
-        widows: 3;
-    }
-
-    fieldset,
-    figure,
-    article,
-    table,
-    .event-card {
-        break-inside: avoid;
+    .bank-row dd {
+        text-align: left;
     }
 }

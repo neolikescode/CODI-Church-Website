@@ -1,129 +1,188 @@
 <!DOCTYPE html>
-<!-- NN. Kgatla (2029139488) -->
-<!-- CSIS1664(2026) Website Project -->
+<!-- City of Destiny International (CODI) -->
 <!-- File name: about.html -->
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description"
         content="About City of Destiny International: our senior pastor, mission, vision and divine mandate.">
     <meta name="author" content="NN. Kgatla">
     <title>CODI &ndash; About us</title>
-    <!-- Bootstrap stylesheet integration -->
+    <link rel="icon" href="images/logo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/codi.css">
 </head>
 
 <body>
-    <div class="container" id="container">
+    <a class="visually-hidden-focusable" href="#main">Skip to main content</a>
 
-        <header>
-
-            <div class="header-info">
-                <a href="index.html"><img src="images/logo.jpeg" alt="CODI Church logo (home page)" width="80"
-                        height="50"></a>
-                <h1>City of Destiny International</h1>
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="current">About us</a></li>
-                    <li><a href="give.html">Give</a></li>
-                    <li><a href="services.html">Services &amp; events</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top codi-navbar">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img class="brand-logo me-2" src="images/logo.jpeg" alt="CODI Church logo" width="1302" height="1208">
+                <span class="brand-name">City of Destiny International</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="give.html">Give</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services &amp; events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
                 </ul>
-            </nav>
+            </div>
+        </div>
+    </nav>
 
+    <main id="main">
+        <header class="page-hero">
+            <div class="container">
+                <span class="eyebrow">City of Destiny International</span>
+                <h1>About us</h1>
+                <p class="lead mb-0">Our mission, vision and divine mandate.</p>
+            </div>
         </header>
 
-        <main>
-            <!-- Senior pastor -->
-            <section id="senior-pastor">
-                <div id="pastor-photo">
-                    <h2>
-                        <span id="pastor-first-name">Noel</span>
-                        <span id="pastor-last-name">Mabasa</span>
-                    </h2>
+        <!-- Divine mandate -->
+        <section class="section" id="mandate">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                    <div class="card-soft">
 
-                    <img src="images/pastor.jpeg" alt="Apostle Noel Mabasa, Senior Pastor of CODI Church" width="100"
-                        height="60">
+                        <h2 class="mb-3">Our divine mandate</h2>
+                        <p>Our divine mandate is rooted in Exodus 25:40:</p>
 
-                    <p id="pastor-title">
-                        <strong>Senior Pastor</strong><br>
-                        City of Destiny International
-                    </p>
+                        <figure class="quote-card">
+                            <blockquote>
+                                &ldquo;See that you make them according to the pattern shown you on
+                                the mountain.&rdquo;
+                            </blockquote>
+                            <figcaption>Exodus 25:40 (NIV)</figcaption>
+                        </figure>
+
+                        <ul class="mandate-list">
+                            <li>
+                                To establish lives upon precept upon precept and line upon line
+                                through sound biblical teaching.
+                            </li>
+                            <li>
+                                To guide people into the discovery of their original purpose,
+                                divine identity, and kingdom assignment.
+                            </li>
+                            <li>
+                                To reveal and manifest the nature, power, and glory of God on the earth.
+                            </li>
+                        </ul>
+
+                        <a class="btn btn-codi-outline"
+                            href="https://www.biblegateway.com/passage/?search=Exodus+25%3A40&amp;version=NIV"
+                            target="_blank" rel="noopener">Read Exodus 25:40<span class="visually-hidden"> (opens in a new tab)</span></a>
+
+                    
+                    </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <p class="pastor-bio">
-                    Apostle Noel Mabasa is the Lead Pastor of City of Destiny International Church.
-                    Called to reveal Christ, Apostle Mabasa teaches the word of God with simplicity and precision.
-                    His depth in the word of God and passion to reach the world with truth has endeared many to His
-                    ministry.
-                    Currently residing in Phalaborwa, Limpopo, he is happily married to Ms MV Mabasa and they are
-                    blessed with four lovely children
-                </p>
-            </section>
+        <!-- Mission and vision -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="row g-4">
 
-            <section id="mission">
-                <h2>Our mission</h2>
+                    <div class="col-md-6">
+                        <section class="card-soft" id="mission">
+                            <h2 class="h3 mb-3">Our mission</h2>
+                            <p class="mb-0">
+                                To lead people into the discovery, recovery, and fulfillment of their
+                                original divine destinies through the uncompromised preaching of the
+                                Word of Faith and the demonstration of the power of the Holy Spirit.
+                            </p>
+                        </section>
+                    </div>
 
-                <p>
-                    To lead people into the discovery, recovery, and fulfillment of their
-                    original divine destinies through the uncompromised preaching of the
-                    Word of Faith and the demonstration of the power of the Holy Spirit.
-                </p>
-            </section>
+                    <div class="col-md-6">
+                        <section class="card-soft" id="vision">
+                            <h2 class="h3 mb-3">Our vision</h2>
+                            <p class="mb-0">
+                                To raise and transform communities into a covenant family of believers
+                                who, through the discipline of the Word and the walk of faith,
+                                rediscover their God-ordained destinies and manifest His divine
+                                purpose on earth.
+                            </p>
+                        </section>
+                    </div>
 
-            <section id="vision">
-                <h2>Our vision</h2>
+                </div>
+            </div>
+        </section>
 
-                <p>
-                    To raise and transform communities into a covenant family of believers
-                    who, through the discipline of the Word and the walk of faith,
-                    rediscover their God-ordained destinies and manifest His divine
-                    purpose on earth.
-                </p>
-            </section>
+        <!-- Senior pastor -->
+        <section class="section">
+            <div class="container">
+                <div class="pastor-card" id="senior-pastor">
 
-            <section id="mandate">
-                <h2>Our divine mandate</h2>
+                    <div id="pastor-photo">
+                        <h2>
+                            <span id="pastor-first-name">Noel</span>
+                            <span id="pastor-last-name">Mabasa</span>
+                        </h2>
 
-                <p>Our divine mandate is rooted in Exodus 25:40:</p>
+                        <img src="images/pastor.jpeg"
+                            alt="Apostle Noel Mabasa, Senior Pastor of CODI Church">
 
-                <blockquote>
-                    &ldquo;See that you make them according to the pattern shown you on
-                    the mountain.&rdquo; (NIV)
-                </blockquote>
-                <p><a href="https://www.biblegateway.com/passage/?search=Exodus+25%3A40&amp;version=NIV"
-                        target="_blank">Read Exodus 25:40 on BibleGateway (opens in a new tab)</a></p>
-                <ul>
-                    <li>
-                        To establish lives upon precept upon precept and line upon line
-                        through sound biblical teaching.
-                    </li>
+                        <p id="pastor-title">
+                            <strong>Senior Pastor</strong><br>
+                            City of Destiny International
+                        </p>
+                    </div>
 
-                    <li>
-                        To guide people into the discovery of their original purpose,
-                        divine identity, and kingdom assignment.
-                    </li>
+                    <p class="pastor-bio">
+                        Apostle Noel Mabasa is the Lead Pastor of City of Destiny International Church.
+                        Called to reveal Christ, Apostle Mabasa teaches the word of God with simplicity and precision.
+                        His depth in the word of God and passion to reach the world with truth has endeared many to His
+                        ministry. Currently residing in Phalaborwa, Limpopo, he is happily married to Ms MV Mabasa and
+                        they are blessed with four lovely children.
+                    </p>
 
-                    <li>
-                        To reveal and manifest the nature, power, and glory of God on the earth.
-                    </li>
-                </ul>
-            </section>
+                </div>
+            </div>
+        </section>
 
-        </main>
+    </main>
 
-        <footer>
-            <p>&copy; 2026 NN. Kgatla<br><em>Last update: 9 October 2026</em></p>
-        </footer>
+    <!-- Footer -->
+    <footer class="codi-footer">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <img class="footer-logo me-2" src="images/logo.jpeg" alt="" width="1302" height="1208">
+                        <strong>City of Destiny International</strong>
+                    </div>
+                    <address class="mb-0">CODI Church premises, alongside the R71 Road, Phalaborwa</address>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a class="btn btn-codi-outline" href="#main">Back to top</a>
+                </div>
+            </div>
+            <p class="footer-note">&copy; 2026 City of Destiny International</p>
+        </div>
+    </footer>
 
-    </div>
-    <!-- Bootstrap file integration -->
     <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
